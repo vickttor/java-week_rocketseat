@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import app.vercel.victorhsdev.todolist.DTO.CreateUserDTO;
 import app.vercel.victorhsdev.todolist.models.UserModel;
 import app.vercel.victorhsdev.todolist.repositories.UserRepository;
 
@@ -36,12 +35,13 @@ public class UserController {
 
   @GetMapping("")
   public ResponseEntity<List<UserModel>> getAll() {
-    return ResponseEntity.ok(repository.getAll());
+    return ResponseEntity.ok(repository.findAll());
   }
 
   @PostMapping("")
-  public void create(@RequestBody CreateUserDTO user)   {
-    repository.createUser(user);
+  public ResponseEntity<UserModel> create(@RequestBody UserModel user)   {
+    var userCreated = repository.save(user);
+    return ResponseEntity.ok(userCreated);
   }
 
 }
