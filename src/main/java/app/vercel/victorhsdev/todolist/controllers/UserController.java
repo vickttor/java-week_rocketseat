@@ -23,7 +23,6 @@ public class UserController {
     this.repository = repository;
   }
 
-
   /*
    * String (texto)
    * Integer (int) numeros inteiros
