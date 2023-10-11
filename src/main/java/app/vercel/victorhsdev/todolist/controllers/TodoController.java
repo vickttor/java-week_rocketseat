@@ -22,7 +22,6 @@ public class TodoController {
 
   @GetMapping("")
   public ResponseEntity<List<TodoModel>> getAll() {
-
     return ResponseEntity.ok(repository.findAll());
   }
 

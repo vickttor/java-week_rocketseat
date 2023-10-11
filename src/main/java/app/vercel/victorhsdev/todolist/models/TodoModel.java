@@ -25,12 +25,5 @@ public class TodoModel {
   private LocalDateTime createdAt;
   @CreationTimestamp
   private LocalDateTime updatedAt;
-
-  public TodoModel(String name, boolean completed, LocalDateTime createdAt, LocalDateTime updatedAt) {
-    this.name = name;
-    this.completed = completed;
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
-  }
-  
+    
 }
